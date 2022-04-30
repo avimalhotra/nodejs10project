@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Nunjucks</title>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="container">
+         <header> {% include "header.html" %}</header>
+         <nav> {% include "nav.html" %}</nav>
+         <main>
+          <nav aria-label="breadcrumb" > {{ ["home","frontend","react"] | join(' > ') }}</nav>
+              <h2>Main</h2>
+          <p>Username is {{user.name | title}} and userid is {{user.id}}</p>
+          <p>{{ "housewife" | replace("housewife","homemaker")}}</p>
+          <ol>
+               {% for i in month %}   
+                    <li>{{ i }}</li>
+               {% endfor %}  
+          </ol>
+          <ul>
+               {% for i,j in user %}   
+                    <li>{{ i }} -> {{ j }}</li>
+               {% endfor %}    
+           </ul>
+           {% if city %}
+                    city
+          {% endif %}
+          <section>
+               <h2>Cars Data</h2>
+          
+          <ol>
+               {% for i in cars %}   
+                    <li>{{ i.name }}</li>
+               {% endfor %}  
+          </ol>
+          </section>
+          </main>
+          <footer> {% include "footer.html" %}</footer>
+     </div>
+</body>
+</html>
