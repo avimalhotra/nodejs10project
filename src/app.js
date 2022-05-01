@@ -19,8 +19,7 @@ nunjucks.configure(path.resolve(__dirname,'public'),{
  });
 
  app.get("/",(req,res)=>{
-     let cardata=[];
-     let cars=Car.find({},'name',(err,data)=>{
+     Car.find({},'name',(err,data)=>{
          if( err){
             //cardata[0]={error:"error found"}
             res.status(200).render("home.html",{cars:err, name:"Home Page"})
@@ -29,9 +28,6 @@ nunjucks.configure(path.resolve(__dirname,'public'),{
              res.status(200).render("home.html",{cars:data,name:"Home Page"})
            }
      });
-
-     //res.status(200).render('home.html',{name:"nunjucks",version:'3.2.3',user:{name:"foo",id:12},month:["jan","feb","mar","apr"],city:"noida",cars:cardata});
-
  });
  app.get("/add",(req,res)=>{
     res.status(200).render('add.html',{name:"Add Car"});
@@ -53,6 +49,21 @@ app.get("/addcar",(req,res)=>{
             res.status(200).send(data);
         }
     })
+});
+app.get("/all",(req,res)=>{
+    res.render("all.html");
+})
+
+app.get("/api",(req,res)=>{
+    //res.header('Access-Control-Allow-Origin',"*");
+    Car.find({},(err,data)=>{
+        if( err){
+           return res.status(200).send(err)
+        }
+        else{
+            return res.status(200).send(data);
+        }
+    }).sort({name:1});
 });
 
  app.get("/product",(req,res)=>{
