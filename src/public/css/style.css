@@ -57,7 +57,7 @@ hr{  margin: 10px 0;}
 
 header{ padding: 10px; background: #cfc;}
 header a{ font-size: 2em; color: #000; font-weight: bold;}
-.container > nav{ background: #222; color: #fff; padding: 10px; overflow: auto;}
+.container > nav{ background: #222; color: #fff; padding: 10px;  display: flex; justify-content: space-between;}
 nav ul{ list-style: none; padding: 0; display: flex; flex-flow: row nowrap;}
 nav ul li{ margin-right: 10px; }
 nav ul li a{ display: block; padding: 8px 12px; color: inherit; white-space: nowrap; }

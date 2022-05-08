@@ -7,8 +7,11 @@ const Car=new Schema({
     brand:{ type: String, required: true },
     type:{ type: String, required: true },
     price:{ type: Number, required: true },
+    power:{ type: Number, required: true },
+    torque:{ type: Number, required: true },
+    weight:{ type: Number, required: true },
     fuel:{ type: String, required: true }
 },{collection:"cars"});
 
-let model=mongoose.model("model",Car);
-module.exports=model;
+let carModel=mongoose.model("carModel",Car);
+module.exports=carModel;

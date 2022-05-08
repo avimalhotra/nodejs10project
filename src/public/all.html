@@ -15,7 +15,7 @@
           <nav aria-label="breadcrumb" > {{ ["home","cars","add"] | join(' > ') }}</nav>
           <h1>All Cars data</h1>
           <table class="table">
-               <thead><tr><th>S No</th><th>Name</th><th>Brand</th><th>Type</th><th>Price</th></tr></thead>
+               <thead><tr><th>S No</th><th>Name</th><th>Brand</th><th>Type</th><th>Power</th><th>Torque</th><th>Weight</th><th>Price</th></tr></thead>
                <tbody></tbody>
           </table>
           </main>
@@ -24,7 +24,7 @@
 <script>
      fetch("/api").then(i=>i.json()).then(i=>{              // i is object
           for( let j in i ){
-          document.querySelector(".table tbody").innerHTML+=`<tr><td>${+j+1}</td><td>${i[j].name}</td><td>${i[j].brand}</td><td>${i[j].type}</td><td>${i[j].price}</td></tr>`;
+          document.querySelector(".table tbody").innerHTML+=`<tr><td>${+j+1}</td><td>${i[j].name}</td><td>${i[j].brand}</td><td>${i[j].type}</td><td>${i[j].power}</td><td>${i[j].torque}</td><td>${i[j].weight}</td><td>${i[j].price}</td></tr>`;
           }
      });
 </script>     

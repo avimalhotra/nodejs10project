@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Nunjucks</title>
+     <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+     <div class="container">
+         <header> {% include "header1.html" %}</header>
+         <nav> {% include "nav.html" %}</nav>
+         <main>
+
+               <h1>{{name}}</h1>
+               <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam maxime quae dolor laborum dicta impedit quos, animi a ab facere eius cum quasi officia voluptates praesentium natus delectus atque doloribus.</p>
+               <p><a href="/logout">logout</a></p>
+          </main>
+          <footer> {% include "footer.html" %}</footer>
+     </div>
+</body>
+</html>
