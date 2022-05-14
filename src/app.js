@@ -131,7 +131,7 @@ app.get('/logout', (req, res) => {
               if (!req.user) { 
                   res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
               }
-              res.render('login.html',{ msg:"Logout Successfully"});
+              res.render('login.html',{ msg:"Logout Successfully, Please close this tab"});
           }
         });
       }
@@ -156,8 +156,6 @@ app.post("/login",(req,res)=>{
         }
       })(req, res);
 });
-
-
 
  app.get("/**",(req,res)=>{
      res.status(404).render('error.html',{name:"404 - Page not found"})
